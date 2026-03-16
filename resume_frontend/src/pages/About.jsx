@@ -4,8 +4,8 @@ function About() {
   return (
     <div className="min-h-[80vh]">
       <div className="container mx-auto px-6 py-24 text-center md:text-left">
-        <div className="max-w-4xl mx-auto glass-effect p-12 rounded-[3rem] shadow-2xl border border-white/40 animate-fade-in-up">
-          <h1 className="text-5xl font-black mb-8 italic">Our <span className="text-primary tracking-tighter">Mission</span></h1>
+        <div className="max-w-4xl mx-auto glass-effect p-6 sm:p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white/40 animate-fade-in-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-8 italic">Our <span className="text-primary tracking-tighter">Mission</span></h1>
           
           <div className="space-y-8 text-lg text-slate-800 dark:text-slate-200 leading-relaxed font-bold">
             <p>

@@ -5,18 +5,18 @@ const ClassicTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto shadow-2xl rounded-lg p-8 space-y-6 bg-base-100 text-base-content border border-gray-200 dark:border-gray-700 transition-all duration-300"
+      className="max-w-4xl mx-auto shadow-2xl rounded-lg p-4 sm:p-6 md:p-8 space-y-6 bg-base-100 text-base-content border border-gray-200 dark:border-gray-700 transition-all duration-300"
     >
       {/* Header Section */}
       <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-primary">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
           {data.personalInformation.fullName}
         </h1>
         <p className="text-lg text-gray-500">
           {data.personalInformation.location}
         </p>
 
-        <div className="flex justify-center space-x-4 mt-2">
+        <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-2 sm:space-y-0 mt-2">
           {data.personalInformation.email && (
             <a
               href={`mailto:${data.personalInformation.email}`}
@@ -82,7 +82,7 @@ const ClassicTemplate = ({ data, resumeRef }) => {
         {(data.experience || []).map((exp, index) => (
           <div key={index} className="mb-4">
             <h3 className="text-xl font-bold">{exp?.jobTitle}</h3>
-            <div className="flex justify-between text-gray-500 italic mb-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between text-gray-500 italic mb-1">
               <span>{exp?.company} | {exp?.location}</span>
               <span>{exp?.duration}</span>
             </div>
@@ -97,7 +97,7 @@ const ClassicTemplate = ({ data, resumeRef }) => {
         {(data.education || []).map((edu, index) => (
           <div key={index} className="mb-2">
             <h3 className="text-xl font-bold">{edu?.degree}</h3>
-            <div className="flex justify-between text-gray-500">
+            <div className="flex flex-col sm:flex-row sm:justify-between text-gray-500">
               <span>{edu?.university}, {edu?.location}</span>
               <span>Graduation: {edu?.graduationYear}</span>
             </div>

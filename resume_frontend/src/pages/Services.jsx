@@ -28,7 +28,7 @@ function Services() {
     <div className="min-h-[80vh]">
       <div className="container mx-auto px-6 py-24">
         <div className="text-center mb-16 animate-fade-in-up">
-           <h1 className="text-6xl font-black mb-4 italic dark:text-white">Premium <span className="text-primary tracking-tighter">Services</span></h1>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 italic dark:text-white">Premium <span className="text-primary tracking-tighter">Services</span></h1>
            <p className="text-slate-500 dark:text-slate-400 text-lg italic">Empowering your career with next-generation tools.</p>
         </div>
 

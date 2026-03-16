@@ -36,9 +36,9 @@ const Login = () => {
         <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
 
-        <div className="glass-effect dark:glass-dark rounded-[2.5rem] p-10 shadow-2xl border border-white/40 dark:border-white/10">
+        <div className="glass-effect dark:glass-dark rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl border border-white/40 dark:border-white/10">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-black mb-2 italic">Welcome <span className="text-primary tracking-tighter">Back</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 italic">Welcome <span className="text-primary tracking-tighter">Back</span></h2>
             <p className="text-slate-500 font-medium italic">Your dream job is waiting for you.</p>
           </div>
 

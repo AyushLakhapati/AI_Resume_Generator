@@ -135,8 +135,8 @@ const GenerateResume = () => {
 
   function showFormFunction() {
     return (
-      <div className="w-full p-10">
-        <h1 className="text-4xl font-bold mb-6 flex items-center justify-center gap-2">
+      <div className="w-full p-4 sm:p-6 md:p-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-2">
           <BiBook className="text-accent" /> Resume Form
         </h1>
         <div>
@@ -195,7 +195,7 @@ const GenerateResume = () => {
               "githubLink",
             ])}
 
-            <div className="flex gap-3 mt-16  p-4 rounded-xl ">
+            <div className="flex flex-col sm:flex-row gap-3 mt-16 p-4 rounded-xl">
               <div className="flex-1">
                 {renderFieldArray(languagesFields, "Languages", "languages", [
                   "name",
@@ -219,8 +219,8 @@ const GenerateResume = () => {
 
   function ShowInputField() {
     return (
-      <div className="bg-base-200 shadow-lg rounded-lg p-10 max-w-2xl w-full text-center">
-        <h1 className="text-4xl font-bold mb-6 flex items-center justify-center gap-2">
+      <div className="bg-base-200 shadow-lg rounded-lg p-6 sm:p-8 md:p-10 max-w-2xl w-full text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-2">
           <FaBrain className="text-accent" /> AI Resume Description Input
         </h1>
         <p className="mb-4 text-lg text-gray-600">
@@ -273,7 +273,7 @@ const GenerateResume = () => {
   }
 
   return (
-    <div className="mt-5 p-10 flex flex-col gap-3 items-center justify-center font-sans">
+    <div className="mt-5 p-4 sm:p-6 md:p-10 flex flex-col gap-3 items-center justify-center font-sans">
       {showFormUI && showFormFunction()}
       {showPromptInput && ShowInputField()}
       {showResumeUI && showResume()}

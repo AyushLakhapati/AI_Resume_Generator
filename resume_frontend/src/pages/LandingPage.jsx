@@ -13,10 +13,10 @@ const LandingPage = () => {
         <div className="hero-content relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between pointer-events-none">
           <div className="max-w-xl text-left animate-fade-in-up pointer-events-auto">
             <div className="badge badge-primary badge-outline mb-4 font-bold tracking-widest px-4 py-3 border-2">AI-POWERED GENERATOR</div>
-            <h1 className="text-6xl md:text-7xl font-black text-white leading-tight mb-6 mt-2">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 mt-2">
               Step Into Your <span className="text-gradient">Future</span>
             </h1>
-            <p className="text-xl text-slate-100 leading-relaxed mb-10 max-w-lg font-bold drop-shadow-lg">
+            <p className="text-base sm:text-lg md:text-xl text-slate-100 leading-relaxed mb-10 max-w-lg font-bold drop-shadow-lg">
               Craft a professional, ATS-friendly resume in seconds. Let our AI handle the design while you focus on landing that dream job.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -102,19 +102,19 @@ const LandingPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
-              <h4 className="text-5xl font-black text-white tracking-tighter">50k+</h4>
+              <h4 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter">50k+</h4>
               <p className="text-slate-400 text-xs uppercase tracking-widest font-black">Resumes Built</p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-5xl font-black text-primary tracking-tighter">98%</h4>
+              <h4 className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tighter">98%</h4>
               <p className="text-slate-400 text-xs uppercase tracking-widest font-black">Success Rate</p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-5xl font-black text-white tracking-tighter">100%</h4>
+              <h4 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter">100%</h4>
               <p className="text-slate-400 text-xs uppercase tracking-widest font-black">Open Source</p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-5xl font-black text-secondary tracking-tighter">24/7</h4>
+              <h4 className="text-3xl sm:text-4xl md:text-5xl font-black text-secondary tracking-tighter">24/7</h4>
               <p className="text-slate-400 text-xs uppercase tracking-widest font-black">AI Support</p>
             </div>
           </div>
@@ -128,7 +128,7 @@ const LandingPage = () => {
           <div className="inline-block p-4 rounded-3xl bg-primary/10 mb-8 animate-bounce">
              <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-primary/20">✨</div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-6 dark:text-white italic">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 dark:text-white italic">
             Stop Searching, Start <span className="text-gradient">Landing</span>
           </h2>
           <p className="mb-12 text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed italic">
@@ -141,8 +141,8 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer p-20 bg-slate-950 text-slate-300 border-t border-white/5">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+      <footer className="footer p-8 md:p-14 lg:p-20 bg-slate-950 text-slate-300 border-t border-white/5">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           <div className="md:col-span-2">
             <h4 className="text-3xl font-black mb-6 text-white tracking-tighter"><span className="text-primary italic">AI</span> Resume</h4>
             <p className="text-lg text-slate-400 mb-8 max-w-md font-medium leading-relaxed">

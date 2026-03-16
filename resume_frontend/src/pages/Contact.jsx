@@ -7,7 +7,7 @@ function Contact() {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
           
           <div className="lg:w-1/2 animate-fade-in-up">
-             <h1 className="text-6xl font-black mb-8 italic dark:text-white">Get in <span className="text-primary tracking-tighter">Touch</span></h1>
+             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 italic dark:text-white">Get in <span className="text-primary tracking-tighter">Touch</span></h1>
              <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 font-medium leading-relaxed">
                Have questions about our AI engine? Need help with a template? Our team is here to support your career journey.
              </p>
@@ -30,7 +30,7 @@ function Contact() {
              </div>
           </div>
 
-          <div className="lg:w-1/2 glass-effect p-12 rounded-[3rem] shadow-2xl border border-white/40 animate-fade-in-up delay-200">
+          <div className="lg:w-1/2 glass-effect p-6 sm:p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white/40 animate-fade-in-up delay-200">
              <form className="space-y-6">
                 <div className="space-y-2">
                    <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-2">Full Name</label>

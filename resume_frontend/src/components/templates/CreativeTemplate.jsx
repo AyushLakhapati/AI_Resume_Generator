@@ -72,7 +72,7 @@ const CreativeTemplate = ({ data, resumeRef }) => {
       </aside>
 
       {/* Main Content */}
-      <main className="w-full md:w-2/3 p-10 space-y-10 bg-slate-50">
+      <main className="w-full md:w-2/3 p-6 sm:p-8 md:p-10 space-y-10 bg-slate-50">
         <section>
           <div className="flex items-center gap-2 mb-4">
             <div className="h-8 w-1 bg-primary rounded-full"></div>

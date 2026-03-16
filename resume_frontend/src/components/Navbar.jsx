@@ -48,6 +48,9 @@ function Navbar() {
             <li><Link to={"/about"} className="hover:text-primary transition-colors">About</Link></li>
             <li><Link to={"/services"} className="hover:text-primary transition-colors">Services</Link></li>
             <li><Link to={"/contact"} className="hover:text-primary transition-colors">Contact Us</Link></li>
+            {currentUser && (
+              <li><Link to={"/my-resumes"} className="text-secondary font-bold hover:text-primary transition-colors">My Resumes</Link></li>
+            )}
           </ul>
         </div>
         <Link to={"/"} className="btn btn-ghost text-2xl font-black tracking-tighter">
@@ -59,6 +62,9 @@ function Navbar() {
           <li><Link to={"/about"} className="hover:text-primary hover:bg-transparent">About</Link></li>
           <li><Link to={"/services"} className="hover:text-primary hover:bg-transparent">Services</Link></li>
           <li><Link to={"/contact"} className="hover:text-primary hover:bg-transparent">Contact Us</Link></li>
+          {currentUser && (
+             <li><Link to={"/my-resumes"} className="text-secondary font-bold hover:text-primary hover:bg-transparent">My Resumes</Link></li>
+          )}
         </ul>
       </div>
       <div className="navbar-end gap-3">

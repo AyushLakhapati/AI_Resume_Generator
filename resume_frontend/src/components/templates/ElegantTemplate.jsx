@@ -5,12 +5,12 @@ const ElegantTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-[#faf9f6] text-[#333] p-12 shadow-md font-serif border border-[#e0dacd]"
+      className="max-w-4xl mx-auto bg-[#faf9f6] text-[#333] p-6 sm:p-8 md:p-12 shadow-md font-serif border border-[#e0dacd]"
       style={{ fontFamily: "'Merriweather', 'Playfair Display', serif" }}
     >
       {/* Header Container */}
       <div className="text-center mb-10 pb-6 border-b border-[#d1c8b3]">
-        <h1 className="text-4xl font-normal tracking-widest text-[#2c2c2c] uppercase mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal tracking-widest text-[#2c2c2c] uppercase mb-4">
           {data?.personalInformation?.fullName}
         </h1>
         
