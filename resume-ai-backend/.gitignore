@@ -34,3 +34,9 @@ build/
 
 ### Data ###
 data/
+
+### Environment / Secrets ###
+src/main/resources/application.properties
+.env
+.env.local
+.env.production
