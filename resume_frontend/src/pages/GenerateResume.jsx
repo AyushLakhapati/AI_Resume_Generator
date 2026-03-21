@@ -52,15 +52,20 @@ const GenerateResume = () => {
   };
 
   const [description, setDescription] = useState("");
+  const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
-    console.log(description);
+    if (!title.trim()) {
+      toast.error("Please enter a title for your resume.");
+      return;
+    }
+    console.log(description, title);
     // server call to get resume
 
     try {
       setLoading(true);
-      const responseData = await generateResume(description);
+      const responseData = await generateResume(description, title);
       console.log(responseData);
       reset(responseData.data);
 
@@ -82,6 +87,7 @@ const GenerateResume = () => {
 
   const handleClear = () => {
     setDescription("");
+    setTitle("");
   };
 
   const renderInput = (name, label, type = "text") => (
@@ -227,9 +233,17 @@ const GenerateResume = () => {
           Enter a detailed description about yourself to generate your
           professional resume.
         </p>
+        <input
+          disabled={loading}
+          type="text"
+          className="input input-bordered w-full mb-4 bg-base-100 placeholder:text-base-content/40"
+          placeholder="Resume Title (e.g., Full Stack Developer Resume)"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <textarea
           disabled={loading}
-          className="textarea textarea-bordered w-full h-48 mb-6 resize-none"
+          className="textarea textarea-bordered w-full h-48 mb-6 resize-none bg-base-100 placeholder:text-base-content/40"
           placeholder="Type your description here..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}

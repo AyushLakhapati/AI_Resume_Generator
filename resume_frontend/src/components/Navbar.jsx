@@ -45,11 +45,19 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content glass-effect rounded-2xl z-[1] mt-3 w-52 p-4 shadow-2xl border border-white/20"
           >
-            <li><Link to={"/about"} className="hover:text-primary transition-colors">About</Link></li>
-            <li><Link to={"/services"} className="hover:text-primary transition-colors">Services</Link></li>
-            <li><Link to={"/contact"} className="hover:text-primary transition-colors">Contact Us</Link></li>
-            {currentUser && (
-              <li><Link to={"/my-resumes"} className="text-secondary font-bold hover:text-primary transition-colors">My Resumes</Link></li>
+            {currentUser ? (
+              <>
+                <li><Link to={"/my-resumes"} className="font-bold hover:text-primary transition-colors">Dashboard</Link></li>
+                <li><Link to={"/generate"} className="hover:text-primary transition-colors">New Resume</Link></li>
+                <li className="menu-title mt-2 opacity-50">Settings</li>
+                <li><a onClick={logout} className="text-error hover:bg-error/10 transition-colors">Logout</a></li>
+              </>
+            ) : (
+              <>
+                <li><Link to={"/about"} className="hover:text-primary transition-colors">About</Link></li>
+                <li><Link to={"/services"} className="hover:text-primary transition-colors">Services</Link></li>
+                <li><Link to={"/contact"} className="hover:text-primary transition-colors">Contact Us</Link></li>
+              </>
             )}
           </ul>
         </div>

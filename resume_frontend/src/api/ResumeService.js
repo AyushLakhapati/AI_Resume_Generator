@@ -19,9 +19,10 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-export const generateResume = async (description) => {
+export const generateResume = async (description, title) => {
   const response = await axiosInstance.post("/api/v1/resume/generate", {
     userDescription: description,
+    title: title,
   });
 
   return response.data;

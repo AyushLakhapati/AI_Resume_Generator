@@ -11,6 +11,7 @@ import GenerateResume from "./pages/GenerateResume";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import MyResumes from "./pages/MyResumes";
+import ViewResume from "./pages/ViewResume";
 import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="my-resumes" element={<MyResumes />} />
+          <Route path="my-resumes/:id" element={<ViewResume />} />
         </Route>
       </Routes>
     </BrowserRouter>

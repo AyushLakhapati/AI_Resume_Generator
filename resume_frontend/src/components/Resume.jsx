@@ -8,7 +8,7 @@ import CreativeTemplate from "./templates/CreativeTemplate";
 import ProfessionalTemplate from "./templates/ProfessionalTemplate";
 import ElegantTemplate from "./templates/ElegantTemplate";
 
-const Resume = ({ data, onEdit, onGenerateAnother }) => {
+const Resume = ({ data, onEdit, onGenerateAnother, isViewMode = false }) => {
   const resumeRef = useRef(null);
   const containerRef = useRef(null);
   const [selectedTemplate, setSelectedTemplate] = useState("classic");
@@ -149,18 +149,29 @@ const Resume = ({ data, onEdit, onGenerateAnother }) => {
 
       {/* Actions */}
       <section className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 py-4 sm:py-6 bg-base-200/50 w-full rounded-2xl border border-base-200 px-4">
-        <button 
-          onClick={onGenerateAnother} 
-          className="btn btn-accent btn-md sm:btn-lg shadow-lg hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
-        >
-          Generate Another
-        </button>
-        <button 
-          onClick={onEdit} 
-          className="btn btn-success btn-md sm:btn-lg shadow-lg hover:scale-105 active:scale-95 transition-all text-white w-full sm:w-auto"
-        >
-          Edit Information
-        </button>
+        {!isViewMode ? (
+          <>
+            <button 
+              onClick={onGenerateAnother} 
+              className="btn btn-accent btn-md sm:btn-lg shadow-lg hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+            >
+              Generate Another
+            </button>
+            <button 
+              onClick={onEdit} 
+              className="btn btn-success btn-md sm:btn-lg shadow-lg hover:scale-105 active:scale-95 transition-all text-white w-full sm:w-auto"
+            >
+              Edit Information
+            </button>
+          </>
+        ) : (
+          <button 
+            onClick={() => window.history.back()} 
+            className="btn btn-secondary btn-md sm:btn-lg shadow-lg hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+          >
+            Back to Dashboard
+          </button>
+        )}
         <button 
           onClick={handleDownloadPdf} 
           className="btn btn-primary btn-md sm:btn-lg shadow-xl hover:scale-110 active:scale-95 transition-all px-6 sm:px-10 w-full sm:w-auto"

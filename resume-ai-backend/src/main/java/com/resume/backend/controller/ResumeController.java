@@ -49,7 +49,9 @@ public class ResumeController {
                 
                 if (user != null) {
                     String resumeDataJson = objectMapper.writeValueAsString(stringObjectMap);
-                    ResumeHistory history = new ResumeHistory(user, resumeRequest.userDescription(), resumeDataJson);
+                    String resumeTitle = resumeRequest.title() != null && !resumeRequest.title().isEmpty() 
+                            ? resumeRequest.title() : "Generated Resume";
+                    ResumeHistory history = new ResumeHistory(user, resumeTitle, resumeRequest.userDescription(), resumeDataJson);
                     resumeHistoryRepository.save(history);
                 }
             }
