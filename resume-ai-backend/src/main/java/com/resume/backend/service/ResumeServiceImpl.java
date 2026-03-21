@@ -1,49 +1,72 @@
 package com.resume.backend.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONObject;
-import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.prompt.Prompt;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
 public class ResumeServiceImpl implements ResumeService {
 
-    private ChatClient chatClient;
+    @Value("${GROQ_API_KEY}")
+    private String groqApiKey;
 
-    public ResumeServiceImpl(ChatClient.Builder builder) {
-        this.chatClient = builder.build();
-    }
+    @Value("${GROQ_MODEL:llama-3.1-8b-instant}")
+    private String groqModel;
+
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+    private static final String GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
     @Override
     public Map<String, Object> generateResumeResponse(String userResumeDescription) throws IOException {
+        String promptString = loadPromptFromFile("resume_prompt.txt");
+        String promptContent = promptString.replace("{{userDescription}}", userResumeDescription);
 
-        String promptString = this.loadPromptFromFile("resume_prompt.txt");
-        String promptContent = this.putValuesToTemplate(promptString, Map.of(
-                "userDescription", userResumeDescription));
-        Prompt prompt = new Prompt(promptContent);
-        String response = chatClient.prompt(prompt).call().content();
-        Map<String, Object> stringObjectMap = parseMultipleResponses(response);
-        // modify :
-        return stringObjectMap;
+        // Build request body
+        Map<String, Object> requestBody = new HashMap<>();
+        requestBody.put("model", groqModel);
+        requestBody.put("messages", List.of(
+            Map.of("role", "user", "content", promptContent)
+        ));
+        requestBody.put("temperature", 0.7);
+        requestBody.put("max_tokens", 4096);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBearerAuth(groqApiKey);
+
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
+
+        ResponseEntity<Map> responseEntity = restTemplate.exchange(
+            GROQ_API_URL, HttpMethod.POST, entity, Map.class);
+
+        Map responseBody = responseEntity.getBody();
+        String content = "";
+        if (responseBody != null) {
+            List choices = (List) responseBody.get("choices");
+            if (choices != null && !choices.isEmpty()) {
+                Map choice = (Map) choices.get(0);
+                Map message = (Map) choice.get("message");
+                content = (String) message.get("content");
+            }
+        }
+
+        return parseMultipleResponses(content);
     }
 
     String loadPromptFromFile(String filename) throws IOException {
         try (java.io.InputStream inputStream = new ClassPathResource(filename).getInputStream()) {
             return new String(inputStream.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
         }
-    }
-
-    String putValuesToTemplate(String template, Map<String, String> values) {
-        for (Map.Entry<String, String> entry : values.entrySet()) {
-            template = template.replace("{{" + entry.getKey() + "}}", entry.getValue());
-        }
-        return template;
     }
 
     public static Map<String, Object> parseMultipleResponses(String response) {
@@ -53,8 +76,7 @@ public class ResumeServiceImpl implements ResumeService {
         int thinkStart = response.indexOf("<think>");
         int thinkEnd = response.indexOf("</think>");
         if (thinkStart != -1 && thinkEnd != -1) {
-            String thinkContent = response.substring(thinkStart + 7, thinkEnd).trim();
-            jsonResponse.put("think", thinkContent);
+            jsonResponse.put("think", response.substring(thinkStart + 7, thinkEnd).trim());
         } else {
             jsonResponse.put("think", null);
         }
@@ -66,7 +88,6 @@ public class ResumeServiceImpl implements ResumeService {
         if (jsonStartMatch != -1 && jsonEndMatch != -1 && jsonStartMatch < jsonEndMatch) {
             jsonContent = response.substring(jsonStartMatch + 7, jsonEndMatch).trim();
         } else {
-            // Fallback: extract between the first { and last }
             int firstBrace = response.indexOf("{");
             int lastBrace = response.lastIndexOf("}");
             if (firstBrace != -1 && lastBrace != -1 && firstBrace < lastBrace) {
