@@ -16,10 +16,10 @@ import java.util.Date;
 public class JwtUtils {
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-  @Value("${resume.app.jwtSecret}")
+  @Value("${resume.app.jwtSecret:=======================ResumeGeneratorSecretKeyByAntigravity======================}")
   private String jwtSecret;
 
-  @Value("${resume.app.jwtExpirationMs}")
+  @Value("${resume.app.jwtExpirationMs:86400000}")
   private int jwtExpirationMs;
 
   public String generateJwtToken(Authentication authentication) {
