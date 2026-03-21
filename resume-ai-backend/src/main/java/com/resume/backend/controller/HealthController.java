@@ -38,6 +38,13 @@ public class HealthController {
                 status.put("roles_table", "MISSING: " + e.getMessage());
             }
 
+            try {
+                jdbcTemplate.execute("SELECT COUNT(*) FROM resume_history");
+                status.put("history_table", "EXISTS");
+            } catch (Exception e) {
+                status.put("history_table", "MISSING: " + e.getMessage());
+            }
+
         } catch (Exception e) {
             status.put("database", "DOWN: " + e.getMessage());
         }
