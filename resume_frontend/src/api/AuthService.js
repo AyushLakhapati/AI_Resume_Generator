@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://resume-ai-backend-5h2t.onrender.com/api/auth/";
 
 const login = async (username, password) => {
   const response = await axios.post(API_URL + "signin", {
