@@ -29,8 +29,7 @@ public class DatabaseInitializer implements CommandLineRunner {
         try {
             jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS user_roles (" +
                     "user_id BIGINT NOT NULL, " +
-                    "role VARCHAR(255), " +
-                    "FOREIGN KEY (user_id) REFERENCES users(id))");
+                    "role VARCHAR(255))");
             System.out.println("User_roles table checked/created.");
         } catch (Exception e) {
             System.err.println("Failed to create user_roles table: " + e.getMessage());
