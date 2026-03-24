@@ -5,7 +5,7 @@ const ClassicTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto shadow-2xl rounded-lg p-8 space-y-6 bg-base-100 text-base-content border border-gray-200 dark:border-gray-700 transition-all duration-300"
+      className="w-full shadow-2xl rounded-lg p-8 space-y-6 bg-base-100 text-base-content border border-gray-200 dark:border-gray-700 transition-all duration-300"
     >
       {/* Header Section */}
       <div className="text-center space-y-2">
@@ -67,7 +67,7 @@ const ClassicTemplate = ({ data, resumeRef }) => {
       {/* Skills Section */}
       <section>
         <h2 className="text-2xl font-semibold text-secondary border-b-2 border-secondary/20 pb-1 mb-2">Skills</h2>
-        <div className="grid grid-cols-3 gap-4 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {(data.skills || []).map((skill, index) => (
             <div key={index} className="badge badge-outline badge-lg px-4 py-2">
               {skill?.title} - <span className="ml-1 font-semibold">{skill?.level}</span>

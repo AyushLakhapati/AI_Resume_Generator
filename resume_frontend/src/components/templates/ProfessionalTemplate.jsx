@@ -5,7 +5,7 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-white text-gray-800 p-10 shadow-lg border-t-8 border-blue-800 font-sans"
+      className="w-full bg-white text-gray-800 p-10 shadow-lg border-t-8 border-blue-800 font-sans"
     >
       {/* Header */}
       <header className="border-b-2 border-gray-300 pb-6 mb-6">
@@ -101,7 +101,7 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
           {data?.skills && data.skills.length > 0 && (
             <section>
               <h2 className="text-xl font-bold text-blue-900 border-b border-gray-300 pb-1 mb-3 uppercase tracking-wider">Skills</h2>
-              <div className="space-y-2">
+              <div className="flex flex-wrap gap-2">
                 {data.skills.map((skill, idx) => (
                   <div key={idx} className="flex flex-col">
                     <span className="font-semibold text-gray-800 text-sm">{skill?.title}</span>

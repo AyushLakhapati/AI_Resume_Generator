@@ -5,7 +5,7 @@ const ModernTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-white text-gray-800 p-10 shadow-xl border-t-8 border-primary rounded-sm transition-all duration-300"
+      className="w-full bg-white text-gray-800 p-10 shadow-xl border-t-8 border-primary rounded-sm transition-all duration-300"
     >
       {/* Header Section */}
       <header className="mb-8">

@@ -5,7 +5,7 @@ const ElegantTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-[#faf9f6] text-[#333] p-12 shadow-md font-serif border border-[#e0dacd]"
+      className="w-full bg-[#faf9f6] text-[#333] p-12 shadow-md font-serif border border-[#e0dacd]"
       style={{ fontFamily: "'Merriweather', 'Playfair Display', serif" }}
     >
       {/* Header Container */}
@@ -100,7 +100,7 @@ const ElegantTemplate = ({ data, resumeRef }) => {
               </h2>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {data.skills.map((skill, idx) => (
-                  <div key={idx} className="flex items-center gap-2 w-[calc(50%-12px)]">
+                  <div key={idx} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#888] rounded-full inline-block"></span>
                     <span className="text-sm text-[#333] font-medium">{skill?.title}</span>
                   </div>

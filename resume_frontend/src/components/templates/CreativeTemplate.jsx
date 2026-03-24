@@ -5,7 +5,7 @@ const CreativeTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto flex bg-white shadow-2xl overflow-hidden rounded-xl transition-all duration-300"
+      className="w-full flex bg-white shadow-2xl overflow-hidden rounded-xl transition-all duration-300"
     >
       {/* Sidebar */}
       <aside className="w-1/3 bg-slate-900 text-white p-8 space-y-8">
