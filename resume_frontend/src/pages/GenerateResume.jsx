@@ -287,10 +287,10 @@ const GenerateResume = () => {
   }
 
   return (
-    <div className="mt-5 p-4 sm:p-6 md:p-10 flex flex-col gap-3 items-center justify-center font-sans">
+    <div className="mt-5 p-2 sm:p-6 md:p-10 flex flex-col gap-3 items-stretch w-full font-sans max-w-7xl mx-auto">
       {showFormUI && showFormFunction()}
       {showPromptInput && ShowInputField()}
-      {showResumeUI && showResume()}
+      {showResumeUI && <div className="w-full flex justify-center">{showResume()}</div>}
     </div>
   );
 };
