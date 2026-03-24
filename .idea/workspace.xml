@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a251297f-ad4e-486a-a0d7-d5405bc4a056" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resume_frontend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_add.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_push.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_remote.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_remote_utf8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_verify.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_verify_utf8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume_frontend/build_log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume_frontend/src/api/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/api/AuthService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume_frontend/src/api/ResumeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/api/ResumeService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume_frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

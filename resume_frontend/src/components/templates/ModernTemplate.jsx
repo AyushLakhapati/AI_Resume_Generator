@@ -5,11 +5,11 @@ const ModernTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-white text-gray-800 p-6 sm:p-8 md:p-10 shadow-xl border-t-8 border-primary rounded-sm transition-all duration-300"
+      className="max-w-4xl mx-auto bg-white text-gray-800 p-10 shadow-xl border-t-8 border-primary rounded-sm transition-all duration-300"
     >
       {/* Header Section */}
       <header className="mb-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 border-b-2 border-gray-100 pb-4 mb-4">
+        <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 border-b-2 border-gray-100 pb-4 mb-4">
           {data.personalInformation.fullName}
         </h1>
         <div className="flex flex-wrap gap-y-2 text-sm text-gray-600 font-medium">
@@ -35,14 +35,14 @@ const ModernTemplate = ({ data, resumeRef }) => {
         <p className="text-gray-700 leading-relaxed text-lg italic">"{data.summary}"</p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-2 space-y-8">
+      <div className="grid grid-cols-3 gap-8">
+        <div className="col-span-2 space-y-8">
           {/* Experience */}
           <section>
             <h2 className="text-xs uppercase tracking-widest font-black text-primary mb-4 border-b border-gray-100 pb-1">Experience</h2>
             {(data.experience || []).map((exp, index) => (
               <div key={index} className="mb-6 group">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                <div className="flex justify-between items-baseline">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">{exp?.jobTitle}</h3>
                   <span className="text-sm font-semibold text-gray-400">{exp?.duration}</span>
                 </div>

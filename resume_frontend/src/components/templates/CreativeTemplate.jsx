@@ -5,12 +5,12 @@ const CreativeTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto flex flex-col md:flex-row bg-white shadow-2xl overflow-hidden rounded-xl transition-all duration-300"
+      className="max-w-4xl mx-auto flex bg-white shadow-2xl overflow-hidden rounded-xl transition-all duration-300"
     >
       {/* Sidebar */}
-      <aside className="w-full md:w-1/3 bg-slate-900 text-white p-8 space-y-8">
-        <div className="text-center md:text-left">
-          <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4 border-4 border-primary/30">
+      <aside className="w-1/3 bg-slate-900 text-white p-8 space-y-8">
+        <div className="text-left">
+          <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-0 mb-4 border-4 border-primary/30">
             <span className="text-4xl font-black text-primary">{data.personalInformation.fullName.split(' ').map(n=>n[0]).join('')}</span>
           </div>
           <h1 className="text-2xl font-bold leading-tight">{data.personalInformation.fullName}</h1>
@@ -72,7 +72,7 @@ const CreativeTemplate = ({ data, resumeRef }) => {
       </aside>
 
       {/* Main Content */}
-      <main className="w-full md:w-2/3 p-6 sm:p-8 md:p-10 space-y-10 bg-slate-50">
+      <main className="w-2/3 p-10 space-y-10 bg-slate-50">
         <section>
           <div className="flex items-center gap-2 mb-4">
             <div className="h-8 w-1 bg-primary rounded-full"></div>
@@ -105,7 +105,7 @@ const CreativeTemplate = ({ data, resumeRef }) => {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="grid grid-cols-2 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="h-6 w-1 bg-primary rounded-full"></div>

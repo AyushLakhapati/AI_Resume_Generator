@@ -5,11 +5,11 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-white text-gray-800 p-6 sm:p-8 md:p-10 shadow-lg border-t-8 border-blue-800 font-sans"
+      className="max-w-4xl mx-auto bg-white text-gray-800 p-10 shadow-lg border-t-8 border-blue-800 font-sans"
     >
       {/* Header */}
       <header className="border-b-2 border-gray-300 pb-6 mb-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 tracking-tight uppercase">
+        <h1 className="text-5xl font-extrabold text-blue-900 tracking-tight uppercase">
           {data?.personalInformation?.fullName}
         </h1>
         <div className="flex flex-wrap gap-4 mt-4 text-sm font-medium text-gray-600">
@@ -36,10 +36,10 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
       </header>
 
       {/* Grid Layout for body */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-8">
         
         {/* Left Column */}
-        <div className="md:col-span-2 space-y-6">
+        <div className="col-span-2 space-y-6">
           {/* Summary */}
           {data?.summary && (
             <section>
@@ -55,7 +55,7 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
               <div className="space-y-5">
                 {data.experience.map((exp, idx) => (
                   <div key={idx}>
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-1">
+                    <div className="flex justify-between items-end mb-1">
                       <h3 className="text-xl font-bold text-gray-800">{exp?.jobTitle}</h3>
                       <span className="text-sm font-semibold text-blue-800 bg-blue-50 px-2 py-1 rounded">{exp?.duration}</span>
                     </div>
@@ -96,7 +96,7 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
         </div>
 
         {/* Right Column */}
-        <div className="md:col-span-1 space-y-6">
+        <div className="col-span-1 space-y-6">
           {/* Skills */}
           {data?.skills && data.skills.length > 0 && (
             <section>

@@ -5,16 +5,16 @@ const ElegantTemplate = ({ data, resumeRef }) => {
   return (
     <div
       ref={resumeRef}
-      className="max-w-4xl mx-auto bg-[#faf9f6] text-[#333] p-6 sm:p-8 md:p-12 shadow-md font-serif border border-[#e0dacd]"
+      className="max-w-4xl mx-auto bg-[#faf9f6] text-[#333] p-12 shadow-md font-serif border border-[#e0dacd]"
       style={{ fontFamily: "'Merriweather', 'Playfair Display', serif" }}
     >
       {/* Header Container */}
       <div className="text-center mb-10 pb-6 border-b border-[#d1c8b3]">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal tracking-widest text-[#2c2c2c] uppercase mb-4">
+        <h1 className="text-4xl font-normal tracking-widest text-[#2c2c2c] uppercase mb-4">
           {data?.personalInformation?.fullName}
         </h1>
         
-        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-[#5a5a5a]">
+        <div className="flex justify-center items-center gap-x-6 gap-y-2 text-sm text-[#5a5a5a]">
           {data?.personalInformation?.location && (
             <span className="flex items-center gap-2"><FaMapMarkerAlt className="opacity-70"/> {data.personalInformation.location}</span>
           )}
@@ -60,7 +60,7 @@ const ElegantTemplate = ({ data, resumeRef }) => {
             <div className="space-y-6">
               {data.experience.map((exp, idx) => (
                 <div key={idx} className="relative pl-4 border-l-2 border-[#d1c8b3]">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                  <div className="flex justify-between items-baseline mb-1">
                     <h3 className="text-lg font-bold text-[#2c2c2c]">{exp?.jobTitle}</h3>
                     <em className="text-sm text-[#666]">{exp?.duration}</em>
                   </div>
@@ -73,7 +73,7 @@ const ElegantTemplate = ({ data, resumeRef }) => {
         )}
 
         {/* Education & Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-8">
           {/* Education Component */}
           {data?.education && data.education.length > 0 && (
             <section>
@@ -116,7 +116,7 @@ const ElegantTemplate = ({ data, resumeRef }) => {
             <h2 className="text-xl font-bold tracking-widest text-[#2c2c2c] uppercase mb-4 flex items-center after:content-[''] after:flex-1 after:h-[1px] after:bg-[#d1c8b3] after:ml-4">
               Selected Works
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6">
               {data.projects.map((proj, idx) => (
                 <div key={idx} className="p-4 bg-white/50 border border-[#eee] rounded-sm">
                   <div className="flex justify-between items-start mb-2">

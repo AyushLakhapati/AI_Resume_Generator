@@ -20,7 +20,7 @@ const LandingPage = () => {
               Craft a professional, ATS-friendly resume in seconds. Let our AI handle the design while you focus on landing that dream job.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to={"/generate-resume"} className="btn btn-primary btn-lg rounded-2xl px-10 shadow-xl shadow-primary/30 hover:scale-105 transition-all text-white border-none">
+              <Link to={"/generate"} className="btn btn-primary btn-lg rounded-2xl px-10 shadow-xl shadow-primary/30 hover:scale-105 transition-all text-white border-none">
                 Create My Resume
               </Link>
               <Link to={"/services"} className="btn btn-ghost btn-lg text-white font-bold rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-md">
@@ -134,7 +134,7 @@ const LandingPage = () => {
           <p className="mb-12 text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed italic">
             "Your dream job is just a few descriptive sentences away. Let's build your professional story together."
           </p>
-          <Link to="/generate-resume" className="btn btn-primary btn-lg rounded-2xl px-16 shadow-2xl hover:scale-110 hover:shadow-primary/40 transition-all text-white border-none">
+          <Link to="/generate" className="btn btn-primary btn-lg rounded-2xl px-16 shadow-2xl hover:scale-110 hover:shadow-primary/40 transition-all text-white border-none">
             Get Started Now
           </Link>
         </div>
@@ -166,7 +166,7 @@ const LandingPage = () => {
             <ul className="space-y-4 font-bold text-slate-400">
               <li><Link to="/about" className="hover:text-primary transition-colors">How it works</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">Templates</Link></li>
-              <li><Link to="/generate-resume" className="hover:text-primary transition-colors">AI Engine</Link></li>
+              <li><Link to="/generate" className="hover:text-primary transition-colors">AI Engine</Link></li>
               <li><Link to="/contact" className="hover:text-primary transition-colors">Support</Link></li>
             </ul>
           </div>
