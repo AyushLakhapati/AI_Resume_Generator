@@ -21,7 +21,16 @@ const Signup = () => {
       toast.success("Registration successful! Please login.");
       navigate("/login");
     } catch (error) {
-      toast.error(error.response?.data?.message || "Registration failed");
+      console.error("Signup: Error during registration", error);
+      let message = "Registration failed";
+      if (!error.response) {
+        message = "Cannot connect to server. Please check your internet or if the backend is running.";
+      } else if (error.response.status === 400) {
+        message = error.response.data?.message || "Username or Email already exists.";
+      } else {
+        message = error.response.data?.message || error.message || "An unexpected error occurred.";
+      }
+      toast.error(message);
     } finally {
       setLoading(false);
     }

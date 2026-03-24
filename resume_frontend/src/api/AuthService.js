@@ -1,13 +1,12 @@
 import axios from "axios";
-
-const API_URL = import.meta.env.VITE_API_URL || "https://resume-ai-backend-5h2t.onrender.com/api/auth/";
+import { API_AUTH_URL } from "./apiConfig";
 
 const login = async (username, password) => {
   console.log("AuthService: Attempting login for", username);
   const response = await axios.post(
-    API_URL + "signin",
+    API_AUTH_URL + "signin",
     { username, password },
-    { timeout: 15000 } // 15 seconds timeout
+    { timeout: 15000 }
   );
   if (response.data.token) {
     localStorage.setItem("user", JSON.stringify(response.data));
@@ -17,7 +16,7 @@ const login = async (username, password) => {
 };
 
 const signup = async (username, email, password) => {
-  return axios.post(API_URL + "signup", {
+  return axios.post(API_AUTH_URL + "signup", {
     username,
     email,
     password,

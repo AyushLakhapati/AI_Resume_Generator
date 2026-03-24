@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a251297f-ad4e-486a-a0d7-d5405bc4a056" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/Resume.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/Resume.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/templates/ClassicTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/templates/ClassicTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/templates/CreativeTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/templates/CreativeTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/templates/ElegantTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/templates/ElegantTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/templates/ModernTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/templates/ModernTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/components/templates/ProfessionalTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/components/templates/ProfessionalTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/pages/MyResumes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/pages/MyResumes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_frontend/src/pages/ViewResume.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resume_frontend/src/pages/ViewResume.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

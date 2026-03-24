@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from "./apiConfig";
 
-export const baseURLL = import.meta.env.VITE_API_BASE_URL || "https://resume-ai-backend-5h2t.onrender.com";
+export const baseURLL = API_BASE_URL;
 
 export const axiosInstance = axios.create({
   baseURL: baseURLL,
