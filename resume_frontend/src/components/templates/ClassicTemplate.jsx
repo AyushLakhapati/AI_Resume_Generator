@@ -16,29 +16,29 @@ const ClassicTemplate = ({ data, resumeRef }) => {
           {data.personalInformation.location}
         </p>
 
-        <div className="flex justify-center space-x-4 mt-2">
+        <div className="flex flex-wrap justify-center items-center gap-4 mt-2">
           {data.personalInformation.email && (
             <a
               href={`mailto:${data.personalInformation.email}`}
-              className="flex items-center text-secondary hover:underline"
+              className="flex items-center text-secondary hover:underline whitespace-nowrap"
             >
               <FaEnvelope className="mr-2" /> {data.personalInformation.email}
             </a>
           )}
           {data.personalInformation.phoneNumber && (
-            <p className="flex items-center text-gray-500">
+            <p className="flex items-center text-gray-500 whitespace-nowrap">
               <FaPhone className="mr-2" /> {data.personalInformation.phoneNumber}
             </p>
           )}
         </div>
 
-        <div className="flex justify-center space-x-4 mt-2">
+        <div className="flex flex-wrap justify-center items-center gap-4 mt-2">
           {data.personalInformation.gitHub && (
             <a
               href={data.personalInformation.gitHub}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 flex items-center"
+              className="text-gray-500 hover:text-gray-700 flex items-center whitespace-nowrap"
             >
               <FaGithub className="mr-2" /> GitHub
             </a>
@@ -48,7 +48,7 @@ const ClassicTemplate = ({ data, resumeRef }) => {
               href={data.personalInformation.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-700 flex items-center"
+              className="text-blue-500 hover:text-blue-700 flex items-center whitespace-nowrap"
             >
               <FaLinkedin className="mr-2" /> LinkedIn
             </a>
@@ -82,9 +82,9 @@ const ClassicTemplate = ({ data, resumeRef }) => {
         {(data.experience || []).map((exp, index) => (
           <div key={index} className="mb-4">
             <h3 className="text-xl font-bold">{exp?.jobTitle}</h3>
-            <div className="flex justify-between text-gray-500 italic mb-1">
-              <span>{exp?.company} | {exp?.location}</span>
-              <span>{exp?.duration}</span>
+            <div className="flex flex-wrap justify-between items-baseline gap-2 text-gray-500 italic mb-1">
+              <span className="font-semibold">{exp?.company} | {exp?.location}</span>
+              <span className="whitespace-nowrap">{exp?.duration}</span>
             </div>
             <p className="text-gray-600 dark:text-gray-300">{exp?.responsibility}</p>
           </div>
@@ -97,9 +97,9 @@ const ClassicTemplate = ({ data, resumeRef }) => {
         {(data.education || []).map((edu, index) => (
           <div key={index} className="mb-2">
             <h3 className="text-xl font-bold">{edu?.degree}</h3>
-            <div className="flex justify-between text-gray-500">
+            <div className="flex flex-wrap justify-between items-baseline gap-2 text-gray-500 mt-1">
               <span>{edu?.university}, {edu?.location}</span>
-              <span>Graduation: {edu?.graduationYear}</span>
+              <span className="whitespace-nowrap font-medium text-primary">Graduation: {edu?.graduationYear}</span>
             </div>
           </div>
         ))}

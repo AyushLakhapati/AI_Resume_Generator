@@ -211,11 +211,13 @@ const Resume = ({ data, onEdit, onGenerateAnother, isViewMode = false }) => {
         <div 
           style={{
             width: `${RESUME_WIDTH}px`,
+            minWidth: `${RESUME_WIDTH}px`,
             transform: `scale(${scale})`,
             transformOrigin: 'top center',
             height: `${currentHeight}px`,
+            flexShrink: 0,
           }}
-          className="transition-all duration-300 ease-in-out shadow-2xl bg-white"
+          className="transition-all duration-300 ease-in-out shadow-2xl bg-white flex-shrink-0"
         >
           {renderTemplate()}
         </div>

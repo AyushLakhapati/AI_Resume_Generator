@@ -61,8 +61,8 @@ const MyResumes = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10 min-h-[80vh]">
-      <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-8 text-center drop-shadow-sm">
+    <div className="w-full max-w-7xl mx-auto p-2 sm:p-6 md:p-10 min-h-[80vh] flex flex-col items-stretch">
+      <h1 className="text-2xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 sm:mb-8 text-center drop-shadow-sm">
         My Resumes
       </h1>
 

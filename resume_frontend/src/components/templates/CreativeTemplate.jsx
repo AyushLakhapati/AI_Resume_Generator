@@ -21,23 +21,23 @@ const CreativeTemplate = ({ data, resumeRef }) => {
           <h2 className="text-sm font-black uppercase tracking-widest text-primary/80 border-b border-white/10 pb-2">Contact</h2>
           <div className="space-y-3 text-sm text-slate-300">
             <div className="flex items-center gap-3">
-              <FaEnvelope className="text-primary" />
-              <span className="truncate">{data.personalInformation.email}</span>
+              <FaEnvelope className="text-primary shrink-0" />
+              <span className="break-all">{data.personalInformation.email}</span>
             </div>
             <div className="flex items-center gap-3">
-              <FaPhone className="text-primary" />
-              <span>{data.personalInformation.phoneNumber}</span>
+              <FaPhone className="text-primary shrink-0" />
+              <span className="whitespace-nowrap">{data.personalInformation.phoneNumber}</span>
             </div>
             {data.personalInformation.linkedIn && (
               <div className="flex items-center gap-3">
-                <FaLinkedin className="text-primary" />
-                <span>LinkedIn</span>
+                <FaLinkedin className="text-primary shrink-0" />
+                <span className="whitespace-nowrap">LinkedIn</span>
               </div>
             )}
             {data.personalInformation.gitHub && (
               <div className="flex items-center gap-3">
-                <FaGithub className="text-primary" />
-                <span>GitHub</span>
+                <FaGithub className="text-primary shrink-0" />
+                <span className="whitespace-nowrap">GitHub</span>
               </div>
             )}
           </div>
@@ -94,9 +94,9 @@ const CreativeTemplate = ({ data, resumeRef }) => {
                 <div className="absolute left-0 top-1.5 w-4.5 h-4.5 bg-primary border-4 border-slate-50 rounded-full -translate-x-1/2"></div>
                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-100">
                    <h3 className="text-lg font-bold text-slate-800">{exp?.jobTitle}</h3>
-                   <div className="flex justify-between items-center mb-2">
+                   <div className="flex flex-wrap justify-between items-center gap-2 mb-2">
                      <span className="text-primary font-bold text-sm">{exp?.company}</span>
-                     <span className="text-xs font-black text-slate-400 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">{exp?.duration}</span>
+                     <span className="text-xs font-black text-slate-400 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded whitespace-nowrap">{exp?.duration}</span>
                    </div>
                    <p className="text-sm text-slate-600 leading-relaxed">{exp?.responsibility}</p>
                 </div>

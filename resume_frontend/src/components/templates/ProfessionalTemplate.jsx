@@ -12,23 +12,23 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
         <h1 className="text-5xl font-extrabold text-blue-900 tracking-tight uppercase">
           {data?.personalInformation?.fullName}
         </h1>
-        <div className="flex flex-wrap gap-4 mt-4 text-sm font-medium text-gray-600">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 text-sm font-medium text-gray-600">
           {data?.personalInformation?.email && (
-            <span className="flex items-center gap-1.5"><FaEnvelope className="text-blue-800"/> {data.personalInformation.email}</span>
+            <span className="flex items-center gap-1.5 whitespace-nowrap"><FaEnvelope className="text-blue-800"/> {data.personalInformation.email}</span>
           )}
           {data?.personalInformation?.phoneNumber && (
-            <span className="flex items-center gap-1.5"><FaPhone className="text-blue-800"/> {data.personalInformation.phoneNumber}</span>
+            <span className="flex items-center gap-1.5 whitespace-nowrap"><FaPhone className="text-blue-800"/> {data.personalInformation.phoneNumber}</span>
           )}
           {data?.personalInformation?.location && (
-            <span className="flex items-center gap-1.5"><FaMapMarkerAlt className="text-blue-800"/> {data.personalInformation.location}</span>
+            <span className="flex items-center gap-1.5 whitespace-nowrap"><FaMapMarkerAlt className="text-blue-800"/> {data.personalInformation.location}</span>
           )}
           {data?.personalInformation?.linkedIn && (
-            <a href={data.personalInformation.linkedIn} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
+            <a href={data.personalInformation.linkedIn} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
               <FaLinkedin className="text-blue-800"/> LinkedIn
             </a>
           )}
           {data?.personalInformation?.gitHub && (
-            <a href={data.personalInformation.gitHub} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
+            <a href={data.personalInformation.gitHub} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
               <FaGithub className="text-blue-800"/> GitHub
             </a>
           )}
@@ -55,9 +55,9 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
               <div className="space-y-5">
                 {data.experience.map((exp, idx) => (
                   <div key={idx}>
-                    <div className="flex justify-between items-end mb-1">
+                    <div className="flex flex-wrap justify-between items-baseline gap-2 mb-1">
                       <h3 className="text-xl font-bold text-gray-800">{exp?.jobTitle}</h3>
-                      <span className="text-sm font-semibold text-blue-800 bg-blue-50 px-2 py-1 rounded">{exp?.duration}</span>
+                      <span className="text-sm font-semibold text-blue-800 bg-blue-50 px-2 py-1 rounded whitespace-nowrap">{exp?.duration}</span>
                     </div>
                     <div className="text-md font-semibold text-gray-600 mb-2">{exp?.company} | {exp?.location}</div>
                     <p className="text-gray-700 leading-relaxed text-sm">{exp?.responsibility}</p>
@@ -101,11 +101,11 @@ const ProfessionalTemplate = ({ data, resumeRef }) => {
           {data?.skills && data.skills.length > 0 && (
             <section>
               <h2 className="text-xl font-bold text-blue-900 border-b border-gray-300 pb-1 mb-3 uppercase tracking-wider">Skills</h2>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {data.skills.map((skill, idx) => (
-                  <div key={idx} className="flex flex-col">
-                    <span className="font-semibold text-gray-800 text-sm">{skill?.title}</span>
-                    <span className="text-xs text-blue-700 uppercase font-bold">{skill?.level}</span>
+                  <div key={idx} className="flex flex-col bg-gray-50 p-2 rounded border border-gray-100 min-w-[80px]">
+                    <span className="font-semibold text-gray-800 text-xs">{skill?.title}</span>
+                    <span className="text-[10px] text-blue-700 uppercase font-black">{skill?.level}</span>
                   </div>
                 ))}
               </div>

@@ -14,23 +14,23 @@ const ElegantTemplate = ({ data, resumeRef }) => {
           {data?.personalInformation?.fullName}
         </h1>
         
-        <div className="flex justify-center items-center gap-x-6 gap-y-2 text-sm text-[#5a5a5a]">
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-[#5a5a5a]">
           {data?.personalInformation?.location && (
-            <span className="flex items-center gap-2"><FaMapMarkerAlt className="opacity-70"/> {data.personalInformation.location}</span>
+            <span className="flex items-center gap-2 whitespace-nowrap"><FaMapMarkerAlt className="opacity-70"/> {data.personalInformation.location}</span>
           )}
           {data?.personalInformation?.phoneNumber && (
-            <span className="flex items-center gap-2"><FaPhone className="opacity-70"/> {data.personalInformation.phoneNumber}</span>
+            <span className="flex items-center gap-2 whitespace-nowrap"><FaPhone className="opacity-70"/> {data.personalInformation.phoneNumber}</span>
           )}
           {data?.personalInformation?.email && (
-            <span className="flex items-center gap-2"><FaEnvelope className="opacity-70"/> {data.personalInformation.email}</span>
+            <span className="flex items-center gap-2 whitespace-nowrap"><FaEnvelope className="opacity-70"/> {data.personalInformation.email}</span>
           )}
           {data?.personalInformation?.linkedIn && (
-            <a href={data.personalInformation.linkedIn} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-black transition-colors">
+            <a href={data.personalInformation.linkedIn} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-black transition-colors whitespace-nowrap">
               <FaLinkedin className="opacity-70"/> LinkedIn
             </a>
           )}
           {data?.personalInformation?.gitHub && (
-            <a href={data.personalInformation.gitHub} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-black transition-colors">
+            <a href={data.personalInformation.gitHub} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-black transition-colors whitespace-nowrap">
               <FaGithub className="opacity-70"/> GitHub
             </a>
           )}
@@ -60,9 +60,9 @@ const ElegantTemplate = ({ data, resumeRef }) => {
             <div className="space-y-6">
               {data.experience.map((exp, idx) => (
                 <div key={idx} className="relative pl-4 border-l-2 border-[#d1c8b3]">
-                  <div className="flex justify-between items-baseline mb-1">
+                  <div className="flex flex-wrap justify-between items-baseline gap-2 mb-1">
                     <h3 className="text-lg font-bold text-[#2c2c2c]">{exp?.jobTitle}</h3>
-                    <em className="text-sm text-[#666]">{exp?.duration}</em>
+                    <em className="text-sm text-[#666] whitespace-nowrap">{exp?.duration}</em>
                   </div>
                   <div className="text-md font-medium text-[#444] mb-2">{exp?.company} <span className="text-[#888] font-normal px-2">|</span> {exp?.location}</div>
                   <p className="text-[#555] leading-relaxed text-sm">{exp?.responsibility}</p>

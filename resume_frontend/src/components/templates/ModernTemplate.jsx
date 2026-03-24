@@ -12,19 +12,19 @@ const ModernTemplate = ({ data, resumeRef }) => {
         <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 border-b-2 border-gray-100 pb-4 mb-4">
           {data.personalInformation.fullName}
         </h1>
-        <div className="flex flex-wrap gap-y-2 text-sm text-gray-600 font-medium">
-          <span className="flex items-center mr-6"><FaMapMarkerAlt className="mr-2 text-primary" /> {data.personalInformation.location}</span>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600 font-medium">
+          <span className="flex items-center whitespace-nowrap"><FaMapMarkerAlt className="mr-2 text-primary" /> {data.personalInformation.location}</span>
           {data.personalInformation.email && (
-            <span className="flex items-center mr-6"><FaEnvelope className="mr-2 text-primary" /> {data.personalInformation.email}</span>
+            <span className="flex items-center whitespace-nowrap"><FaEnvelope className="mr-2 text-primary" /> {data.personalInformation.email}</span>
           )}
           {data.personalInformation.phoneNumber && (
-            <span className="flex items-center mr-6"><FaPhone className="mr-2 text-primary" /> {data.personalInformation.phoneNumber}</span>
+            <span className="flex items-center whitespace-nowrap"><FaPhone className="mr-2 text-primary" /> {data.personalInformation.phoneNumber}</span>
           )}
           {data.personalInformation.linkedIn && (
-            <span className="flex items-center mr-6"><FaLinkedin className="mr-2 text-primary" /> LinkedIn</span>
+            <span className="flex items-center whitespace-nowrap"><FaLinkedin className="mr-2 text-primary" /> LinkedIn</span>
           )}
           {data.personalInformation.gitHub && (
-            <span className="flex items-center mr-6"><FaGithub className="mr-2 text-primary" /> GitHub</span>
+            <span className="flex items-center whitespace-nowrap"><FaGithub className="mr-2 text-primary" /> GitHub</span>
           )}
         </div>
       </header>
@@ -42,9 +42,9 @@ const ModernTemplate = ({ data, resumeRef }) => {
             <h2 className="text-xs uppercase tracking-widest font-black text-primary mb-4 border-b border-gray-100 pb-1">Experience</h2>
             {(data.experience || []).map((exp, index) => (
               <div key={index} className="mb-6 group">
-                <div className="flex justify-between items-baseline">
+                <div className="flex flex-wrap justify-between items-baseline gap-2">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">{exp?.jobTitle}</h3>
-                  <span className="text-sm font-semibold text-gray-400">{exp?.duration}</span>
+                  <span className="text-sm font-semibold text-gray-400 whitespace-nowrap">{exp?.duration}</span>
                 </div>
                 <p className="text-md font-semibold text-gray-600 mb-2">{exp?.company} | {exp?.location}</p>
                 <p className="text-gray-600 leading-relaxed">{exp?.responsibility}</p>
