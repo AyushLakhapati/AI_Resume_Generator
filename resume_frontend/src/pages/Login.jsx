@@ -14,15 +14,20 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("Login: Form submitted", { username });
     setLoading(true);
     try {
-      await AuthService.login(username, password);
+      const data = await AuthService.login(username, password);
+      console.log("Login: Success", data);
       toast.success("Login successful!");
       navigate("/");
       window.location.reload();
     } catch (error) {
-      toast.error(error.response?.data?.message || "Login failed");
+      console.error("Login: Error during authentication", error);
+      const message = error.response?.data?.message || error.message || "Login failed";
+      toast.error(message);
     } finally {
+      console.log("Login: Finishing handler");
       setLoading(false);
     }
   };

@@ -1,8 +1,0 @@
-warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'resume-ai-backend/.gitattributes', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'resume-ai-backend/.gitignore', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'resume-ai-backend/.mvn/wrapper/maven-wrapper.properties', LF will be replaced by CRLF the next time Git touches it
-error: read error while indexing resume-ai-backend/data/resumedb.mv.db: Permission denied
-error: resume-ai-backend/data/resumedb.mv.db: failed to insert into database
-error: unable to index file 'resume-ai-backend/data/resumedb.mv.db'
-fatal: adding files failed

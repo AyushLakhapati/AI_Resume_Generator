@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseURLL = "https://resume-ai-backend-5h2t.onrender.com";
+export const baseURLL = import.meta.env.VITE_API_BASE_URL || "https://resume-ai-backend-5h2t.onrender.com";
 
 export const axiosInstance = axios.create({
   baseURL: baseURLL,
